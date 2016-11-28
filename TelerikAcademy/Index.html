@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <title>Академия на Телерик (безплатни видео курсове и уроци) - Телерик Академия - Студентска система</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Telerik Academy Students Integrated Learning System" />
+    <meta name="keywords" content="Students Portal, Студентска система, Telerik Academy, Академия на Телерик" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="revisit-After" content="1 day" />
+    <meta name="rating" content="general" />
+    <meta name="author" content="Telerik Academy" />
+    <meta name="generator" content="Telerik Academy Learning System 5.7 (build 20160514.1dfa2d3" />
+    <link rel="shortcut icon" href="/Content/Images/favicon.ico" />
+    <link rel="apple-touch-icon" href="/Content/Images/apple-touch-icon.png" />
+    <link rel="alternate" type="application/rss+xml" href="/Rss/LatestCourses" title="Най-новите курсове в Академията на Телерик" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href="/Content/kendo/kendo.common.min.css" rel="stylesheet"/>
+<link href="/Content/kendo/kendo.metro.min.css" rel="stylesheet"/>
+<link href="/Content/kendo/kendo.black.prefixed.css" rel="stylesheet"/>
+<link href="/Content/kendo/kendo.default.prefixed.css" rel="stylesheet"/>
+<link href="/Content/bootstrap.css" rel="stylesheet"/>
+<link href="/Content/Global.css" rel="stylesheet"/>
+<link href="/Content/sweet-alert.css" rel="stylesheet"/>
+
+    
+    <link href="/Content/Index.css" rel="stylesheet"/>
+
+    
+
+
+
+    <noscript>
+        <link href="/Content/NoJavascript.css" rel="stylesheet" type="text/css" />
+    </noscript>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
+    <script>window.jQuery || document.write(decodeURI('%3Cscript src="/Scripts/jquery-2.1.4.min.js"%3E%3C/script%3E'))</script>
+    <script src="/Scripts/jszip.js"></script>
+<script src="/Scripts/kendo/kendo.all.js"></script>
+<script src="/Scripts/kendo/kendo.aspnetmvc.js"></script>
+<script src="/Scripts/kendo/cultures/kendo.culture.en-GB.js"></script>
+<script src="/Scripts/jquery.timeago.js"></script>
+<script src="/Scripts/jquery.timeago.bg.js"></script>
+<script src="/Scripts/sweet-alert.min.js"></script>
+<script src="/Scripts/TILS/global.js"></script>
+<script src="/Scripts/TILS/search.js"></script>
+<script src="/Scripts/bootstrap.js"></script>
+
+    <script src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    
+
+
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            }; if (!f._fbq) f._fbq = n;
+            n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+        }(window,
+        document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '501393893391884');
+        fbq('track', "PageView");</script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=501393893391884&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+
+</head>
+
+
+
+<body>
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-MJH9PN"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MJH9PN');
+    </script>
+    <!-- End Google Tag Manager -->
+    <script>
+        $(function () {
+            var $items = $('.CategoryTitle');
+            console.log($items.length);
+            $('.CategoryTitle').on('click', function (e) {
+                var $parent = $(this).parents(".CategoryItem");
+                $(".CategoryItem.current").removeClass("current");
+                $parent.addClass("current");
+                e.preventDefault();
+                return false;
+            });
+
+            $(".MenuItem").on("click", function (e) {
+                if ($(this).hasClass("TelerikAcademyLogo")) {
+                    return;
+                }
+
+                var $parent = $(this).parents("li");
+
+                var hasHover = $parent.hasClass("hover");
+                var $list = $parent.find("> ul");
+
+                $(".hover").find("ul")
+                    .animate({
+                        height: 0
+                    }, 200, function () {
+                        $(".hover > ul")
+                                .css("height", "")
+                        $(".hover")
+                                .removeClass("hover");
+                    });
+
+                //$('.hover').removeClass("hover");
+
+                if (!hasHover) {
+                    //$parent.addClass("hover");
+
+                    $list.css("opacity", 0)
+                        .css("display", "block");
+
+                    var h = $list.css("height");
+                    console.log(h);
+
+                    $list.css("height", 0)
+                        .css("opacity", 1);
+
+                    $list.animate({
+                        height: h
+                    }, 500, function () {
+                        $list.css("height", "")
+                            .css("display", "");
+                        $parent.addClass("hover");
+                    });
+                }
+                e.preventDefault();
+                return false;
+            });
+        });
+    </script>
+    <div id="root">
+        <header id="MainHeader" class="text-center">
+            <nav id="MainNavMobile" class="navbar navbar-default text-center">
+                <div class="container-fluid">
+                    <div class="navbar-header text-center">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="text-center">
+                            <a class="navbar-brand" href="/">
+                                <img src="/Content/Images/Logos/telerik-academy-logo.png" alt="Alternate Text" />
+                                
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav text-left">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Академия<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/SoftwareAcademy/Candidate">Кандидатстване</a></li>
+                                    <li><a href="/SoftwareAcademy/Candidate/ExamDateSelect">Входен изпит</a></li>
+                                    <li><a href="/Courses/CourseTracks/List">Специалности</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown hasSubdropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Курсове и инициативи<span class="caret"></span></a>
+                                <ul class="dropdown-menu big-dropdown-menu">
+                                    <li class="vertical-menu">
+                                        <ul>
+                                            <li>
+                                                <a href="/Courses/Courses/List" class="btn btn-success">Всички курсове</a>
+                                            </li>
+                                            <li>
+                                                <a href="http://academy.telerik.com/academy/about" class="btn btn-success">Софтуерна Академия</a>
+                                            </li>
+                                            <li>
+                                                <a href="http://www.telerik.com/telerik-digital-marketing-course" class="btn btn-success">Дигитална Академия</a>
+                                            </li>
+                                            <li>
+                                                <a href="http://academy.telerik.com/school-academy/about" class="btn btn-success">Училищна академия</a>
+                                            </li>
+                                            <li>
+                                                <a href="http://academy.telerik.com/algoacademy/home" class="btn btn-success">Алго Академия</a>
+                                            </li>
+                                            <li>
+                                                <a href="http://telerik-kids.com/" class="btn btn-success">Детска Академия</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li class="subdropdown">
+                                        <a href="#" class="dropdown-subheader">Основи на програмирането</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/Courses/Courses/Details/323">Основи на C#</a></li>
+                                            <li><a href="/Courses/Courses/Details/331">C# за напреднали</a></li>
+                                            <li><a href="/Courses/Courses/Details/338">ООП със C#</a></li>
+                                            <li><a href="/Courses/Courses/Details/339">Основи на JavaScript</a></li>
+                                            <li><a href="/Courses/Courses/Details/245">ООП с JavaScript</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="subdropdown">
+                                        <a href="#" class="dropdown-subheader">Уеб Front-end</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/Courses/Courses/Details/324">Основи на HTML</a></li>
+                                            <li><a href="/Courses/Courses/Details/332">CSS стилизиране</a></li>
+                                            <li><a href="/Courses/Courses/Details/344">JavaScript UI и DOM</a></li>
+                                            <li><a href="/Courses/Courses/Details/262">UX дизайн</a></li>
+                                            <li><a href="/Courses/Courses/Details/292">Основи на Photoshop</a></li>
+                                            <li><a href="/Courses/Courses/Details/294">Изграждане на <br class="hidden-sm hidden-xs" />Уеб front-end</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="subdropdown">
+                                        <a href="#" class="dropdown-subheader">Програмиране за напреднали</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/Courses/Courses/Details/345">Компонентно тестване<br class="hidden-sm hidden-xs" /> със C#</a></li>
+                                            <li><a href="/Courses/Courses/Details/244">Качествен програмен<br class="hidden-sm hidden-xs" /> код със C#</a></li>
+                                            <li><a href="/Courses/Courses/Details/272">Структури от данни<br class="hidden-sm hidden-xs" /> и алгоритми</a></li>
+                                            <li><a href="/Courses/Courses/Details/257">Бази от данни и SQL</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="subdropdown">
+                                        <a href="#" class="dropdown-subheader">Уеб технологии</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/Courses/Courses/Details/254">Приложения с JavaScript</a></li>
+                                            <li><a href="/Courses/Courses/Details/275">Уеб услуги и<br class="hidden-sm hidden-xs" /> облачни технологии</a></li>
+                                            <li><a href="/Courses/Courses/Details/305">Уеб приложения<br class="hidden-sm hidden-xs" /> с Node.js</a></li>
+                                            <li><a href="/Courses/Courses/Details/299">SPA приложения<br class="hidden-sm hidden-xs" /> с AngularJS</a></li>
+                                            <li><a href="/Courses/Courses/Details/310">ASP.NET Web Forms</a></li>
+                                            <li><a href="/Courses/Courses/Details/313">ASP.NET MVC</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="subdropdown">
+                                        <a href="#" class="dropdown-subheader">Мобилни технологии</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/Courses/Courses/Details/300">Приложения за Windows</a></li>
+                                            <li><a href="/Courses/Courses/Details/306">Мобилни приложения<br class="hidden-sm hidden-xs" /> за Android</a></li>
+                                            <li><a href="/Courses/Courses/Details/311">Приложения за <br class="hidden-sm hidden-xs" />iPhone и iPad</a></li>
+                                            <li><a href="/Courses/Courses/Details/316">Мултиплатформени <br class="hidden-sm hidden-xs" />мобилни приложения с <br class="hidden-sm hidden-xs" />NativeScript</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="subdropdown">
+                                        <a href="#" class="dropdown-subheader">Осигуряване на Качеството</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/Courses/Courses/Details/290">Осигуряване на <br class="hidden-sm hidden-xs" /> качеството<br class="hidden-sm hidden-xs" /> част 1</a></li>
+                                            <li><a href="/Courses/Courses/Details/301">Осигуряване на <br class="hidden-sm hidden-xs" /> качеството<br class="hidden-sm hidden-xs" /> част 2</a></li>
+                                            <li><a href="/Courses/Courses/Details/308">Осигуряване на <br class="hidden-sm hidden-xs" /> качеството<br class="hidden-sm hidden-xs" /> част 3</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Форум<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/Forum/Home">Начало</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/Forum/Category/14/important-announcements">Важни съобщения</a></li>
+                                    <li><a href="/Forum/Category/10/telerik-software-academy">Софтуерна академия</a></li>
+                                    <li><a href="/Forum/Category/13/qa-academy">QA академия</a></li>
+                                    <li><a href="/Forum/Category/12/telerik-school-academy">Училищна академия</a></li>
+                                    <li><a href="/Forum/Category/3/algo-academy">Алго академия</a></li>
+                                    <li><a href="/Forum/Category/11/kids-academy-programirane-za-deca">Детска академия</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/Forum/Category/1/csharp-programming">C# програмиране</a></li>
+                                    <li><a href="/Forum/Category/2/front-end-development">Уеб Front-end програмиране</a></li>
+                                    <li><a href="/Forum/Category/8/web-development">Web Development</a></li>
+                                    <li><a href="/Forum/Category/9/mobile-development">Mobile Development</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/Forum/Category/5/events-and-competitions">Събития и конкурси</a></li>
+                                    <li><a href="/Forum/Category/6/external-courses">Външни курсове</a></li>
+                                    <li><a href="/Forum/Category/4/uncategorized">Други</a></li>
+                                    <li><a href="/Forum/Category/7/архив">Архив</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Помощ<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="http://telerikacademy.com/Files/22f12c2e-c836-4707-96c0-3ab0e3541a29.pdf">Условия и правила за участие в Академията на Телерик</a></li>
+                                    <li><a href="/FeedbackReport">Обратна връзка</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/Pages/1/Как%20да%20кандидатствате%20за%20Софтуерната%20академия%20на%20Телерик">Как се кандидатства за Софтуерната<br class="mobile" /> Академия?</a></li>
+                                    <li><a href="/Pages/2/Как%20да%20запишете%20онлайн%20курс%20в%20Студентската%20система%20на%20Телерик">Как да запиша онлайн курс в<br class="mobile" /> студентската система?</a></li>
+                                    <li><a href="/Pages/22/Как%20да%20изпратя%20домашно%20в%20студентската%20система%20на%20Telerik%20Academy?">Как да изпратя домашна работа в<br class="mobile" /> студентската система?</a></li>
+                                    <li><a href="/Pages/21/Как%20да%20запишем%20група%20за%20курса,%20който%20сме%20си%20избрали?">Как да запишем група за курса,<br class="mobile" />който сме си избрали?</a></li>
+                                    <li><a href="/Pages/20/Как%20да%20запишем%20тест%20или%20практически%20изпит?" class="k-link">Как да запишем тест <br class="mobile" />или практически изпит?</a></li>
+                                    <li><a href="/Pages/23/Как да кандидатствате за сертификат?">Как да кандидатстваме за сертификат?</a></li>
+                                    <li><a href="#">Как да кандидатстваме за сертификат?</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="http://academy.telerik.com/">Уебсайт на академията на Телерик</a></li>
+                                    <li><a href="http://bgcoder.com/">BGCoder Judge System</a></li>
+                                    <li><a href="https://github.com/TelerikAcademy/Common/raw/master/Telerik-Academy-TestSystem/Telerik-Academy-TestSystem.1.1.zip">Тестова система</a></li>
+                                    <li><a href="http://downloads.academy.telerik.com/svn/public/AntiCheatClient/Telerik-Academy-AntiCheat.zip">AntiCheat приложение</a></li>
+                                </ul>
+                            </li>
+
+                            
+
+
+
+                            <li class="dropdown">
+
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        Потребител
+                                        <span class="caret"></span>
+                                    </a>
+
+                                <ul class="dropdown-menu">
+                                        <li><a href="/Users/Auth/Login" id="EntranceButton" class="entranceButton" rel="nofollow">Вход</a></li>
+                                        <li><a href="/Users/Auth/Registration" class="entranceButton" rel="nofollow">Регистрация</a></li>
+                                        <li><a href="/Users/Auth/FacebookLogin" id="FbLogin" class="entranceButton" rel="nofollow">Вход с Facebook</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-search">
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+            <div class="search-controls hidden">
+                <form class="form-group form-inline" method="get" action="/Search/Results">
+                    <input type="text" name="search" placeholder="Търси в системата" autocomplete="off" />
+                    <button>
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </form>
+            </div>
+
+        </header>
+        <div id="MainContainer">
+            <section id="MainContent">
+                
+
+
+
+
+<div class="banner row">
+    <div class="banner-bg col-xs-12">
+        <div class="logo-container" style="position: absolute">
+            <a href="/" class="pull-left">
+                <img src="/Content/Images/telerik-academy-logo.png" />
+            </a>
+        </div>
+        <div class="newsPost" >
+            <h1 class="banner-heading">Telerik Academy</h1>
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8 text-center">
+                    <p>
+                        Запишете се за нашите онлайн курсове с безплатен достъп до всички материали и видео уроци. <br />
+                        Станете нинджа софтуерен инженер!
+                    </p>
+                </div>
+            </div>
+            <div class="row" style="margin:0">
+                <div class="homePageButtons text-center">
+                            <a class="btn btn-lg" href="/Courses/Courses/Details/398">
+                                C# за напреднали
+                            </a>
+                             &nbsp;
+                            <a class="btn btn-lg" href="/Courses/Courses/Details/397">
+                                CSS стилизиране
+                            </a>
+                             &nbsp;
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row text-center index-item forum-posts-container">
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>Текущи курсове</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-offset-0 col-xs-12 col-sm-offset-0 col-sm-12 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+        <div class="row">
+            <div class="col-xs-12">
+
+                    <div class="row" style="margin-top: 15px">
+                        <div class="col-xs-12 text-center">
+                            <a href="Courses/Courses/Details/391">
+                                Single-page приложения с Angular 2
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 15px">
+                        <div class="col-xs-12 text-center">
+                            <a href="Courses/Courses/Details/393">
+                                Училищна академия: Обектно-ориентирано проргамиране с TypeScript
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 15px">
+                        <div class="col-xs-12 text-center">
+                            <a href="Courses/Courses/Details/397">
+                                CSS стилизиране (ноември 2016)
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 15px">
+                        <div class="col-xs-12 text-center">
+                            <a href="Courses/Courses/Details/398">
+                                C# за напреднали (ноември 2016)
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 15px">
+                        <div class="col-xs-12 text-center">
+                            <a href="Courses/Courses/Details/399">
+                                Структури от данни и алгоритми (ноември 2016)
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 15px">
+                        <div class="col-xs-12 text-center">
+                            <a href="Courses/Courses/Details/400">
+                                Уеб приложения с Node.js
+                            </a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row text-center index-item">
+    <div class="col-xs-offset-0 col-xs-12  col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8  ">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h2>Последни видео материали</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                        <div class="row forumpost-row  ">
+                                <div class="col-sm-4 col-xs-12 text-center">
+                                    <div class="row">
+                                        <div class="col-xs-offset-0 col-xs-12 col-sm-offset-1 col-sm-10 text-center">
+                                            <h3>Fundamentals of Multithreading...</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-1 col-sm-10 text-center">
+                                            <a href="http://www.youtube.com/watch?v=egH8BHXWTRw" class="btn-image" target="_blank" title="http://www.youtube.com/watch?v=egH8BHXWTRw">
+                                                <img src="https://i.ytimg.com/vi/egH8BHXWTRw/mqdefault.jpg" alt="Fundamentals of Multithreading in .NET" title="Fundamentals of Multithreading in .NET" class="lecture-video-thumbnail img-responsive img-thumbnail" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-1 col-sm-10">
+
+
+
+                                            <p class="video-description hidden-xs hidden-sm hidden-md">Table of Contents: Async vs Parallel vs Concurrent Differences between Parallel and Concurrent execution Multithreading vs Multitasking Cooperative ...</p>
+                                            <p class="video-description hidden-lg">Table of Contents: Async vs Parallel vs Concurrent Differences between Parallel and Concurrent execution Multithreading vs Multitasking Cooperative ...</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-offset-0 col-xs-12 col-sm-offset-1 col-sm-10">
+                                            <a href="http://www.youtube.com/watch?v=egH8BHXWTRw" class="btn btn-success" target="_blank" title="http://www.youtube.com/watch?v=egH8BHXWTRw">
+                                                Гледайте видеото
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-xs-12 text-center">
+                                    <div class="row">
+                                        <div class="col-xs-offset-0 col-xs-12 col-sm-offset-1 col-sm-10 text-center">
+                                            <h3>Символни низове и текстообрабо...</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-1 col-sm-10 text-center">
+                                            <a href="http://www.youtube.com/watch?v=F2nzgmQfpBA" class="btn-image" target="_blank" title="http://www.youtube.com/watch?v=F2nzgmQfpBA">
+                                                <img src="https://i.ytimg.com/vi/F2nzgmQfpBA/mqdefault.jpg" alt="Символни низове и текстообработка в C#" title="Символни низове и текстообработка в C#" class="lecture-video-thumbnail img-responsive img-thumbnail" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-1 col-sm-10">
+
+
+
+                                            <p class="video-description hidden-xs hidden-sm hidden-md"> C# за напреднали <br /> Константин Симеонов <br /> 25.11.2016...</p>
+                                            <p class="video-description hidden-lg"> C# за напреднали <br /> Константин Симеонов <br /> 25.11.2016...</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-offset-0 col-xs-12 col-sm-offset-1 col-sm-10">
+                                            <a href="http://www.youtube.com/watch?v=F2nzgmQfpBA" class="btn btn-success" target="_blank" title="http://www.youtube.com/watch?v=F2nzgmQfpBA">
+                                                Гледайте видеото
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-xs-12 text-center">
+                                    <div class="row">
+                                        <div class="col-xs-offset-0 col-xs-12 col-sm-offset-1 col-sm-10 text-center">
+                                            <h3>Алгоритми за търсене</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-1 col-sm-10 text-center">
+                                            <a href="http://www.youtube.com/watch?v=F1ijPL6cHsc" class="btn-image" target="_blank" title="http://www.youtube.com/watch?v=F1ijPL6cHsc">
+                                                <img src="https://i.ytimg.com/vi/F1ijPL6cHsc/mqdefault.jpg" alt="Алгоритми за търсене" title="Алгоритми за търсене" class="lecture-video-thumbnail img-responsive img-thumbnail" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-1 col-sm-10">
+
+
+
+                                            <p class="video-description hidden-xs hidden-sm hidden-md"> Структури от данни и алгоритми <br /> Кристиян Цъклев <br /> 25 ноември...</p>
+                                            <p class="video-description hidden-lg"> Структури от данни и алгоритми <br /> Кристиян Цъклев <br /> 25 ноември...</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-offset-0 col-xs-12 col-sm-offset-1 col-sm-10">
+                                            <a href="http://www.youtube.com/watch?v=F1ijPL6cHsc" class="btn btn-success" target="_blank" title="http://www.youtube.com/watch?v=F1ijPL6cHsc">
+                                                Гледайте видеото
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="row forumpost-row hide-on-mobile">
+                                <div class="col-sm-4 col-xs-12 text-center">
+                                    <div class="row">
+                                        <div class="col-xs-offset-0 col-xs-12 col-sm-offset-1 col-sm-10 text-center">
+                                            <h3>Селекции, маски, канали и пъте...</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-1 col-sm-10 text-center">
+                                            <a href="http://www.youtube.com/watch?v=nkNe5aHZpSQ" class="btn-image" target="_blank" title="http://www.youtube.com/watch?v=nkNe5aHZpSQ">
+                                                <img src="https://i.ytimg.com/vi/nkNe5aHZpSQ/mqdefault.jpg" alt="Селекции, маски, канали и пътечки" title="Селекции, маски, канали и пътечки" class="lecture-video-thumbnail img-responsive img-thumbnail" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-1 col-sm-10">
+
+
+
+                                            <p class="video-description hidden-xs hidden-sm hidden-md"> UX дизайн и работа с Photoshop <br /> Тянко Йорданов <br /> 22 ноемвр...</p>
+                                            <p class="video-description hidden-lg"> UX дизайн и работа с Photoshop <br /> Тянко Йорданов <br /> 22 ноемвр...</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-offset-0 col-xs-12 col-sm-offset-1 col-sm-10">
+                                            <a href="http://www.youtube.com/watch?v=nkNe5aHZpSQ" class="btn btn-success" target="_blank" title="http://www.youtube.com/watch?v=nkNe5aHZpSQ">
+                                                Гледайте видеото
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-xs-12 text-center">
+                                    <div class="row">
+                                        <div class="col-xs-offset-0 col-xs-12 col-sm-offset-1 col-sm-10 text-center">
+                                            <h3>CSS Presentation</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-1 col-sm-10 text-center">
+                                            <a href="http://www.youtube.com/watch?v=jNQKRbBgkDY" class="btn-image" target="_blank" title="http://www.youtube.com/watch?v=jNQKRbBgkDY">
+                                                <img src="https://i.ytimg.com/vi/jNQKRbBgkDY/mqdefault.jpg" alt="CSS Presentation" title="CSS Presentation" class="lecture-video-thumbnail img-responsive img-thumbnail" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-1 col-sm-10">
+
+
+
+                                            <p class="video-description hidden-xs hidden-sm hidden-md"> CSS стилизиране <br /> Евлоги Христов <br /> 25 ноември 2016</p>
+                                            <p class="video-description hidden-lg"> CSS стилизиране <br /> Евлоги Христов <br /> 25 ноември 2016</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-offset-0 col-xs-12 col-sm-offset-1 col-sm-10">
+                                            <a href="http://www.youtube.com/watch?v=jNQKRbBgkDY" class="btn btn-success" target="_blank" title="http://www.youtube.com/watch?v=jNQKRbBgkDY">
+                                                Гледайте видеото
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-xs-12 text-center">
+                                    <div class="row">
+                                        <div class="col-xs-offset-0 col-xs-12 col-sm-offset-1 col-sm-10 text-center">
+                                            <h3>Workshop: Bit Shift Matrix</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-1 col-sm-10 text-center">
+                                            <a href="http://www.youtube.com/watch?v=ALmb8T2rT5E" class="btn-image" target="_blank" title="http://www.youtube.com/watch?v=ALmb8T2rT5E">
+                                                <img src="https://i.ytimg.com/vi/ALmb8T2rT5E/mqdefault.jpg" alt="Workshop: Bit Shift Matrix" title="Workshop: Bit Shift Matrix" class="lecture-video-thumbnail img-responsive img-thumbnail" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-1 col-sm-10">
+
+
+
+                                            <p class="video-description hidden-xs hidden-sm hidden-md"> C# за напреднали <br /> Стивън Цветков <br /> 23 ноември</p>
+                                            <p class="video-description hidden-lg"> C# за напреднали <br /> Стивън Цветков <br /> 23 ноември</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-offset-0 col-xs-12 col-sm-offset-1 col-sm-10">
+                                            <a href="http://www.youtube.com/watch?v=ALmb8T2rT5E" class="btn btn-success" target="_blank" title="http://www.youtube.com/watch?v=ALmb8T2rT5E">
+                                                Гледайте видеото
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row text-center index-item forum-posts-container">
+    <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 ">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h2>Последни форум постове</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 text-center">
+<div class="row forumpost-row">
+                            <div class="col-xs-12 text-center">
+                                <h3 style="height: auto">Оценяване на изпит - Бази данни и SQL (октомври 2016)</h3>
+                                <p>В Категория:  <a href="/Forum/Category/57/databases">Databases</a></p>
+                                <div class="row">
+                                    <div class="col-xs-offset-0 col-xs-12 col-lg-6 col-lg-offset-3">
+                                        <p>Здравейте, След изпитите миналата седмица и след като оценявахте известно време само единия идва ред и на другия, а именно &quot;Бази данни и SQL&quot;.  Трябва да оцените поне 10 изпита. Ср... <a href="/Forum/Questions/203094/Оценяване-на-изпит-Бази-данни-и-SQL-октомври-2016">Прочетете повече</a></p>
+                                    </div>
+                                </div>
+                                <p style="margin: 0">
+                                    Отговорен <time class="timeago" datetime="2016-11-15T23:40:11.8570000">15/11/2016 23:40:11</time>
+                                    от <a href="/Users/vesheff"> vesheff</a>
+                                </p>
+                            </div>
+                        </div>
+<div class="row forumpost-row">
+                            <div class="col-xs-12 text-center">
+                                <h3 style="height: auto">Обратна връзка за курса по &quot;Шаблони за дизайн&quot;</h3>
+                                <p>В Категория:  <a href="/Forum/Category/14/important-announcements">Важни съобщения</a></p>
+                                <div class="row">
+                                    <div class="col-xs-offset-0 col-xs-12 col-lg-6 col-lg-offset-3">
+                                        <p>Здравейте колеги, Вече имате получени анкети за обратна връзка за курсовете във втори модул, а също така ще има и анкети за отделните курсове и моята молба към вас е всички да се в... <a href="/Forum/Questions/203054/Обратна-връзка-за-курса-по-Шаблони-за-дизайн">Прочетете повече</a></p>
+                                    </div>
+                                </div>
+                                <p style="margin: 0">
+                                    Отговорен <time class="timeago" datetime="2016-11-15T15:53:36.6730000">15/11/2016 15:53:36</time>
+                                    от <a href="/Users/ViktorTsvetkov"> ViktorTsvetkov</a>
+                                </p>
+                            </div>
+                        </div>
+<div class="row forumpost-row">
+                            <div class="col-xs-12 text-center">
+                                <h3 style="height: auto">Оценяване на изпит - Шаблони за дизайн</h3>
+                                <p>В Категория:  <a href="/Forum/Category/14/important-announcements">Важни съобщения</a></p>
+                                <div class="row">
+                                    <div class="col-xs-offset-0 col-xs-12 col-lg-6 col-lg-offset-3">
+                                        <p>Здравейте, След като се потрудихте над изпита, дойде време и да го оценявате. Както вече си знаете, ще е peer review, така че важат същите правила, както и до сега.  Трябва да оцен... <a href="/Forum/Questions/202946/Оценяване-на-изпит-Шаблони-за-дизайн">Прочетете повече</a></p>
+                                    </div>
+                                </div>
+                                <p style="margin: 0">
+                                    Отговорен <time class="timeago" datetime="2016-11-14T16:58:09.6000000">14/11/2016 16:58:09</time>
+                                    от <a href="/Users/stoyan.ruzmanov"> stoyan.ruzmanov</a>
+                                </p>
+                            </div>
+                        </div>
+<div class="row forumpost-row">
+                            <div class="col-xs-12 text-center">
+                                <h3 style="height: auto">[C# Основи] Резултати от курса</h3>
+                                <p>В Категория:  <a href="/Forum/Category/18/csharp-part-1">C# Fundamentals</a></p>
+                                <div class="row">
+                                    <div class="col-xs-offset-0 col-xs-12 col-lg-6 col-lg-offset-3">
+                                        <p>Критерии за оценките:  Взет (434 студента) Изпит: 100+ или  Общи точки: 40+   Взет с отличие (233 студента) Изпит: 300+ или  Общи точки: 60+   Успех на всички в следващия курс! <a href="/Forum/Questions/202843/CSharp-Основи-Резултати-от-курса">Прочетете повече</a></p>
+                                    </div>
+                                </div>
+                                <p style="margin: 0">
+                                    Отговорен <time class="timeago" datetime="2016-11-12T17:50:05.2130000">12/11/2016 17:50:05</time>
+                                    от <a href="/Users/michellee"> michellee</a>
+                                </p>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row index-item hidden-xs hidden-md">
+    <div class="col-xs-12 text-center">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h2>Последни новини от нашата Facebook страница</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <div id="fb-root"></div>
+                <div class="fb-like-box" data-href="http://www.facebook.com/TelerikAcademy" data-width="1024" data-height="200" data-show-faces="false" data-stream="true" data-header="true"></div>
+                <script>
+                    window.fbAsyncInit = function () {
+                        FB.init({
+                            appId: '242624699174333',
+                            xfbml: true,
+                            version: 'v2.3'
+                        });
+
+
+                        FB.api("/247838771909081/feed",
+                        function (response) {
+                            console.log("It worked!!!");
+                            console.log(response);
+                            if (response && !response.error) {
+
+                                /* handle the result */
+                            }
+                        });
+
+                        //$(window).bind("load resize", function () {
+                        //    var containerWidth = $('#FbContainer').css("width");
+                        //    $('#FbContainer').html('<div class="fb-like-box" ' +
+                        //    'data-href="http://www.facebook.com/TelerikAcademy"' +
+                        //    ' data-width="1024" data-height="200" data-show-faces="false" ' +
+                        //    'data-stream="true" data-header="true"></div>');
+                        //    FB.XFBML.parse();
+                        //});
+                    };
+
+                    // facebook information
+                    (function (d, s, id) {
+                        var fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        var js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=242624699174333";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </section>
+        </div>
+
+        <footer id="MainFooter">
+            <section class="footerLinkContainerWrapper">
+                <div class="container">
+                    <div class="row">
+                                <div class="footerLinkContainer col-md-2 col-sm-3 col-xs-6">
+                                    <h4><a href="http://academy.telerik.com/#" target="_blank" title="Софтуерна академия">Софтуерна академия</a></h4>
+                                    <ul>
+                                            <li><a href="http://academy.telerik.com/academy/about" target="_blank" title="За Софтуерната академия">За Софтуерната академия</a></li>
+                                            <li><a href="http://academy.telerik.com/academy/certificates" target="_blank" title="Сертификати">Сертификати</a></li>
+                                            <li><a href="http://academy.telerik.com/academy/admission" target="_blank" title="Прием">Прием</a></li>
+                                            <li><a href="http://academy.telerik.com/academy/apply" target="_blank" title="Кандидатствай">Кандидатствай</a></li>
+                                            <li><a href="http://academy.telerik.com/academy/entrance-exam" target="_blank" title="Приемен изпит">Приемен изпит</a></li>
+                                            <li><a href="http://academy.telerik.com/academy/faq" target="_blank" title="Често задавани въпроси">Често задавани въпроси</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footerLinkContainer col-md-2 col-sm-3 col-xs-6">
+                                    <h4><a href="http://academy.telerik.com/#" target="_blank" title="Kурсове">Kурсове</a></h4>
+                                    <ul>
+                                            <li><a href="http://academy.telerik.com/student-courses/about" target="_blank" title="За курсовете">За курсовете</a></li>
+                                            <li><a href="http://academy.telerik.com/student-courses/programming" target="_blank" title="Програмиране">Програмиране</a></li>
+                                            <li><a href="http://academy.telerik.com/student-courses/web-design-and-ui" target="_blank" title="Уеб дизайн и UI технологии">Уеб дизайн и UI технологии</a></li>
+                                            <li><a href="http://academy.telerik.com/student-courses/software-technologies" target="_blank" title="Софтуерни технологии">Софтуерни технологии</a></li>
+                                            <li><a href="http://academy.telerik.com/student-courses/soft-skills-and-business-skills" target="_blank" title="Личностни и бизнес умения">Личностни и бизнес умения</a></li>
+                                            <li><a href="http://academy.telerik.com/student-courses/external-courses" target="_blank" title="Външни курсове">Външни курсове</a></li>
+                                            <li><a href="http://academy.telerik.com/student-courses/archive" target="_blank" title="Архивни курсове">Архивни курсове</a></li>
+                                            <li><a href="http://academy.telerik.com/student-courses/faq" target="_blank" title="Често задавани въпроси">Често задавани въпроси</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footerLinkContainer col-md-2 col-sm-3 col-xs-6">
+                                    <h4><a href="http://academy.telerik.com/#" target="_blank" title="Училищна академия">Училищна академия</a></h4>
+                                    <ul>
+                                            <li><a href="http://academy.telerik.com/school-academy/about" target="_blank" title="За Училищната академия">За Училищната академия</a></li>
+                                            <li><a href="http://academy.telerik.com/school-academy/season-2016-2017" target="_blank" title="Сезон 2016-2017">Сезон 2016-2017</a></li>
+                                            <li><a href="http://academy.telerik.com/school-academy/season-2015-2016" target="_blank" title="Сезон 2015-2016">Сезон 2015-2016</a></li>
+                                            <li><a href="http://academy.telerik.com/school-academy/season-2014-2015" target="_blank" title="Сезон 2014-2015">Сезон 2014-2015</a></li>
+                                            <li><a href="http://academy.telerik.com/school-academy/season-2013-2014" target="_blank" title="Сезон 2013-2014">Сезон 2013-2014</a></li>
+                                            <li><a href="http://academy.telerik.com/school-academy/2012-2013" target="_blank" title="Сезон 2012-2013">Сезон 2012-2013</a></li>
+                                            <li><a href="http://academy.telerik.com/school-academy/season-2011-2012" target="_blank" title="Сезон 2011-2012">Сезон 2011-2012</a></li>
+                                            <li><a href="http://academy.telerik.com/school-academy/season-2010-2011" target="_blank" title="Сезон 2010-2011">Сезон 2010-2011</a></li>
+                                            <li><a href="http://academy.telerik.com/school-academy/faq" target="_blank" title="Често задавани въпроси">Често задавани въпроси</a></li>
+                                            <li><a href="http://academy.telerik.com/school-academy/makes-students-software-developers" target="_blank" title="Инфографика">Инфографика</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footerLinkContainer col-md-2 col-sm-3 col-xs-6">
+                                    <h4><a href="http://academy.telerik.com/#" target="_blank" title="Семинари">Семинари</a></h4>
+                                    <ul>
+                                            <li><a href="http://academy.telerik.com/seminars/about" target="_blank" title="За семинарите">За семинарите</a></li>
+                                            <li><a href="http://academy.telerik.com/seminars/software-engineering" target="_blank" title="Софтуерно инженерство">Софтуерно инженерство</a></li>
+                                            <li><a href="http://academy.telerik.com/seminars/others" target="_blank" title="Други">Други</a></li>
+                                            <li><a href="http://academy.telerik.com/seminars/competitions" target="_blank" title="Състезания">Състезания</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footerLinkContainer col-md-2 col-sm-3 col-xs-6">
+                                    <h4><a href="http://academy.telerik.com/#" target="_blank" title="За нас">За нас</a></h4>
+                                    <ul>
+                                            <li><a href="http://academy.telerik.com/about/news" target="_blank" title="Новини">Новини</a></li>
+                                            <li><a href="http://academy.telerik.com/about/telerik-academy" target="_blank" title="За Академията на Телерик">За Академията на Телерик</a></li>
+                                            <li><a href="http://academy.telerik.com/about/licenses" target="_blank" title="Лицензи">Лицензи</a></li>
+                                            <li><a href="http://academy.telerik.com/about/gallery" target="_blank" title="Галерия">Галерия</a></li>
+                                            <li><a href="http://telerikacademy.com/Forum/Home" target="_blank" title="Форум">Форум</a></li>
+                                            <li><a href="http://telerikacademy.com" target="_blank" title="Студентска система">Студентска система</a></li>
+                                            <li><a href="http://academy.telerik.com/about/website-terms-of-use" target="_blank" title="Условия за ползване на сайта">Условия за ползване на сайта</a></li>
+                                            <li><a href="http://academy.telerik.com/about/contact-us" target="_blank" title="Контакти">Контакти</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footerLinkContainer col-md-2 col-sm-3 col-xs-6">
+                                    <h4><a href="http://academy.telerik.com/%D0%B4%D0%B5%D1%82%D1%81%D0%BA%D0%B0-%D0%B0%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D1%8F" target="_blank" title="Детска академия">Детска академия</a></h4>
+                                    <ul>
+                                    </ul>
+                                </div>
+                                <div class="footerLinkContainer col-md-2 col-sm-3 col-xs-6">
+                                    <h4><a href="http://academy.telerik.com/%D0%B5-learning" target="_blank" title="Вход">Вход</a></h4>
+                                    <ul>
+                                    </ul>
+                                </div>
+                                <div class="footerLinkContainer col-md-2 col-sm-3 col-xs-6">
+                                    <h4><a href="http://academy.telerik.com/telerik-academy-en" target="_blank" title="En">En</a></h4>
+                                    <ul>
+                                    </ul>
+                                </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="FooterBar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="versionAndTerms">
+                                <p>Всички права запазени © Telerik Academy 2012-2016 </p>
+                                <p>
+                                    <a href="/Home/About">
+                                        Telerik Academy Learning System 5.7 (build 20160514.1dfa2d3
+                                    </a>
+                                </p>
+                                <p class="termsAndConditions">
+                                    <a href="http://telerikacademy.com/Files/1cf99863-2163-4c99-8e82-a667a2814924.pdf" target="_blank">Правила и условия</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div id="FooterLogo"></div>
+                        </div>
+                        <div class="col-sm-4">
+                            <ul id="SocialNetworks">
+                                <li>
+                                    <a href="http://www.facebook.com/TelerikAcademy" style="background-position:0 0;" target="_blank"></a>
+                                </li>
+                                <li>
+                                    <a href="http://www.youtube.com/user/TelerikAcademy" style="background-position:0 175px;" target="_blank"></a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/#!/TelerikAcademy" style="background-position:0 140px;" target="_blank"></a>
+                                </li>
+                                <li>
+                                    <a href="https://plus.google.com/u/0/b/105769630299292709719/" style="background-position:0 105px;" target="_blank"></a>
+                                </li>
+                                <li>
+                                    <a href="/Rss/LatestCourses" style="background-position: 0 70px;" target="_blank"></a>
+                                </li>
+                                <li>
+                                    <a href="http://www.linkedin.com/groups?gid=3161033&amp;trk=hb_side_g" style="background-position:0 35px;" target="_blank"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </div>
+    </div>
+    </div>
+    </section>
+    </footer>
+    </div>
+    
+
+    <script>
+        $('.dropdown').on('show.bs.dropdown', function (e) {
+            $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+        });
+
+        $('.dropdown').on('hide.bs.dropdown', function (e) {
+            $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+        });
+    </script>
+</body>
+</html>
