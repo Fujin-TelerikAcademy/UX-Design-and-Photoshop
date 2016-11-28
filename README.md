@@ -1,1 +1,1 @@
-# UX-Design-and-Photoshop
+# UX-Design-and-Photoshop Course Project
