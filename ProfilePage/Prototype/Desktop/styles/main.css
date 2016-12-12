@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+.left {
+    float: left
+}
+
+.right {
+    float: right
+}
+
+.center-text {
+    text-align: center;
+}
+
+body {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5fbd71+0,ffffff+100 */
+    background: #5fbd71;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #5fbd71 0%, #ffffff 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #5fbd71 0%, #ffffff 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #5fbd71 0%, #ffffff 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#5fbd71', endColorstr='#ffffff', GradientType=0);
+    /* IE6-9 */
+}
+
+ul {
+    list-style-type: none
+}
+
+h1 {
+    margin-top: 20px;
+    color: #0FA67D;
+    clear: both
+}
+
+h5 {
+    padding-bottom: 15px;
+    color: #0FA67D;
+    font-size: 27px;
+    font-weight: inherit
+}
+
+a {
+    text-decoration: none;
+    font-size: 23px
+}
+
+section,
+#profile-nav {
+    margin: 20px 40px 20px 0
+}
+
+#site-nav {
+    background-color: #000000;
+}
+
+#site-nav ul li {
+    display: inline-block;
+}
+
+#academy-logo-image {
+    margin: 0;
+    width: 230px;
+    height: 75px;
+}
+
+#site-nav ul li a {
+    display: inline-block;
+    margin: 20px 80px 0 0;
+    color: white
+}
+
+#site-nav ul li.active a {
+    color: #FE6458;
+    text-decoration: underline
+}
+
+#site-nav ul li:hover a {
+    text-decoration: underline
+}
+
+#profile-nav li {
+    margin: 10px 0;
+    padding: 15px 5px;
+    border: 5px solid #0FA67D
+}
+
+#profile-nav li:hover {
+    background-color: #10A57B
+}
+
+#profile-nav li a {
+    color: #0FA67D;
+}
+
+#profile-nav li:hover a {
+    color: #FFFFFF
+}
+
+#profile-information>div {
+    margin: 10px 0 40px 0;
+    padding: 5px 0 0 5px;
+    width: 595px;
+    /*height: 182px;*/
+    border: 3px solid #0FA67D;
+    border-radius: 10px
+}
+
+#profile-information div p {
+    margin: 5px 30px 5px 0;
+    font-weight: inherit
+}
+
+#profile-image {
+    position: relative;
+    width: 185px;
+    height: 185px;
+    display: block;
+    margin: 0 auto;
+    border: 12px solid white;
+    border-radius: 50%
+}
+
+.profile-icon {
+    width: 43px;
+    height: 37px;
+}
+
+#link-icon {
+    position: relative;
+    top: -125px;
+    left: 60px
+}
+
+#friends-icon {
+    position: relative;
+    top: -40px;
+    left: 45px;
+}
+
+#team-icon {
+    position: relative;
+    top: 15px;
+    left: 130px
+}
+
+#messages-icon {
+    position: relative;
+    top: -40px;
+    left: 218px;
+}
+
+#screenshot-icon {
+    position: relative;
+    top: -125px;
+    left: 200px
+}
+
+#student-card-information {
+    margin: 20px 0;
+    padding: 10px 15px;
+    border: 3px solid #0FA67D;
+    border-radius: 10px
+}
+
+#student-card-img {
+    width: 214px;
+    height: 130px
+}
+
+.small-icon {
+    width: 30px;
+    height: 30px;
+    margin: 5px 10px 0 0;
+}
+
+#student-card-information li {
+    font-size: 20px;
+    color: #0FA67D
+}
