@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+.left {
+    float: left
+}
+
+.right {
+    float: right
+}
+
+.text-center {
+    text-align: center
+}
+
+.bolder {
+    font-weight: bold
+}
+
+body {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5dbe71+0,a5dab0+27,a5dab0+41,5dbe71+54,a5dab0+100,5dbe71+100,ffffff+100,5dbe71+101 */
+    background: #5dbe71;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #5dbe71 0%, #a5dab0 27%, #a5dab0 41%, #5dbe71 54%, #a5dab0 100%, #5dbe71 100%, #ffffff 100%, #5dbe71 101%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #5dbe71 0%, #a5dab0 27%, #a5dab0 41%, #5dbe71 54%, #a5dab0 100%, #5dbe71 100%, #ffffff 100%, #5dbe71 101%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #5dbe71 0%, #a5dab0 27%, #a5dab0 41%, #5dbe71 54%, #a5dab0 100%, #5dbe71 100%, #ffffff 100%, #5dbe71 101%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#5dbe71', endColorstr='#5dbe71', GradientType=0);
+    /* IE6-9 */
+    font-family: 'Roboto', sans-serif
+}
+
+section {
+    margin: 20px 40px;
+}
+
+section:not(:last-child) {
+    margin-bottom: 50px
+}
+
+ul {
+    list-style-type: none
+}
+
+h1 {
+    position: relative;
+    margin: 0px 40px 50px;
+    font-size: 50px;
+    font-weight: inherit;
+    color: #FFFFFF;
+    clear: both
+}
+
+h1::after {
+    position: relative;
+    top: 35px;
+    left: 25px;
+    content: url("../images/ninja-image.png");
+}
+
+h2 {
+    clear: both;
+    margin: 15px 0;
+    font-size: 34px;
+    font-weight: inherit;
+    color: #FFFFFF
+}
+
+h5 {
+    padding-bottom: 15px;
+    color: #0FA67D;
+    font-size: 27px;
+    font-weight: inherit
+}
+
+a {
+    color: #2E8EB8;
+    text-decoration: none;
+    font-size: 20px
+}
+
+a:hover {
+    color: #FF6357
+}
+
+p {
+    font-size: 22px;
+    color: #FFFFFF
+}
+
+#site-nav {
+    background-color: #000000;
+}
+
+#site-nav ul li {
+    display: inline-block;
+}
+
+#academy-logo-image {
+    margin: 0;
+    width: 230px;
+    height: 75px;
+}
+
+#site-nav ul li a {
+    display: inline-block;
+    margin: 20px 80px 0 0;
+    color: #FFFFFF
+}
+
+#site-nav ul li.active a {
+    color: #FE6458;
+    text-decoration: underline
+}
+
+#site-nav ul li:hover a {
+    text-decoration: underline
+}
+
+.new-course-button {
+    margin: 10px 10px 10px 0;
+    padding: 15px 25px;
+    background-color: #FFFFFF;
+    border: 2px solid #949CA7;
+    color: #606E77
+}
+
+.new-course-button:hover {
+    box-shadow: 0 0 15px #FFFFFF
+}
+
+.video-container {
+    position: relative;
+    width: 235px;
+    height: 220px;
+    float: left;
+    margin-right: 35px
+}
+
+.video-img {
+    width: 210px;
+    height: 125px;
+    border: 4px solid #FFFFFF
+}
+
+.video-btn {
+    position: absolute;
+    bottom: 0;
+    left: 25px;
+    padding: 11px 15px;
+    background-color: #D94819;
+    font-size: 13px;
+    color: #FFFFFF
+}
+
+footer {
+    padding: 10px;
+    background-color: #3CBB62;
+    color: #FFFFFF;
+    font-size: 20px
+}
+
+#social-icons {
+    float: right
+}
+
+.social-icon {
+    height: 30px
+}
