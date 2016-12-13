@@ -17,7 +17,7 @@
     float: right
 }
 
-.center-text {
+.text-center {
     text-align: center;
 }
 
@@ -79,7 +79,7 @@ section,
 #site-nav ul li a {
     display: inline-block;
     margin: 20px 80px 0 0;
-    color: white
+    color: #FFFFFF
 }
 
 #site-nav ul li.active a {
@@ -101,6 +101,20 @@ section,
     background-color: #10A57B
 }
 
+#profile-nav li.active {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,3fbb63+100,207cca+100,7db9e8+100 */
+    background: #ffffff;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #3fbb63 100%, #207cca 100%, #7db9e8 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffffff 0%, #3fbb63 100%, #207cca 100%, #7db9e8 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffffff 0%, #3fbb63 100%, #207cca 100%, #7db9e8 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#7db9e8', GradientType=0);
+    /* IE6-9 */
+}
+
 #profile-nav li a {
     color: #0FA67D;
 }
@@ -109,18 +123,71 @@ section,
     color: #FFFFFF
 }
 
-#profile-information>div {
-    margin: 10px 0 40px 0;
+#page-information>div {
+    margin: 10px 0 50px 0;
     padding: 5px 0 0 5px;
     width: 595px;
-    /*height: 182px;*/
     border: 3px solid #0FA67D;
     border-radius: 10px
 }
 
-#profile-information div p {
+#page-information div p {
     margin: 5px 30px 5px 0;
     font-weight: inherit
+}
+
+#information-title {
+    font-size: 22px
+}
+
+#empty-information-message {
+    margin: 25px;
+    padding: 15px;
+    background-color: #D7D7D7
+}
+
+#empty-information-message p {
+    position: relative;
+    padding: 0 45px;
+    font-size: 20px;
+    color: #0FA67D
+}
+
+#empty-information-message p::before {
+    content: url("../images/info-icon.png");
+    position: absolute;
+    top: -7px;
+    left: -10px
+}
+
+#courses-table,
+#forum-posts-table {
+    margin: 5px 30px;
+    width: 530px;
+    height: 530px;
+    border: 1px solid #000000
+}
+
+#courses-table th,
+#forum-posts-table th {
+    height: 53px;
+    border-bottom: 1px solid #000000;
+    font-weight: normal
+}
+
+#courses-table th:not(:last-child),
+#courses-table td:not(:last-child),
+#forum-posts-table th:not(:last-child),
+#forum-posts-table td:not(:last-child) {
+    border-right: 1px solid #000000
+}
+
+#courses-table th:first-child {
+    width: 425px
+}
+
+#forum-posts-table th:first-child {
+    width: 156px
 }
 
 #profile-image {
@@ -129,7 +196,7 @@ section,
     height: 185px;
     display: block;
     margin: 0 auto;
-    border: 12px solid white;
+    border: 12px solid #FFFFFF;
     border-radius: 50%
 }
 
@@ -189,4 +256,19 @@ section,
 #student-card-information li {
     font-size: 20px;
     color: #0FA67D
+}
+
+footer {
+    padding: 10px;
+    background-color: #3CBB62;
+    color: #FFFFFF;
+    font-size: 20px
+}
+
+#social-icons {
+    float: right
+}
+
+.social-icon {
+    height: 30px
 }
