@@ -108,8 +108,8 @@ p {
 
 #academy-logo-image {
     margin: 0;
-    width: 230px;
-    height: 75px;
+    width: 220px;
+    height: 65px;
 }
 
 #site-nav ul li a {
@@ -159,15 +159,38 @@ p {
     left: 25px;
     padding: 11px 15px;
     background-color: #D94819;
+    border: none;
     font-size: 13px;
     color: #FFFFFF
 }
 
 footer {
-    padding: 10px;
     background-color: #3CBB62;
     color: #FFFFFF;
     font-size: 20px
+}
+
+#home-footer {
+    padding: 5px 70px;
+    background-color: #D9D9D9
+}
+
+#home-footer>div {
+    margin: 0 30px
+}
+
+#home-footer a {
+    font-size: 13px;
+    color: #000000
+}
+
+#home-footer ul a::before {
+    content: url("../images/footer-icon.png");
+    margin: 3px;
+}
+
+#site-footer {
+    padding: 10px
 }
 
 #social-icons {
